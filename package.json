@@ -1,0 +1,41 @@
+{
+  "name": "fowljs",
+  "version": "1.0.0",
+  "description": "FowlJS is a JavaScript library for filtering profanity.",
+  "main": "index.js",
+  "scripts": {
+    "setup": "npm install",
+    "test": "karma start karma.conf.js --single-run",
+    "coverage": "karma start karma.conf.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chennighan/FowlJS.git"
+  },
+  "author": "chennighan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chennighan/FowlJS/issues"
+  },
+  "homepage": "https://github.com/chennighan/FowlJS#readme",
+  "devDependencies": {
+      "browserify": "^14.0.0",
+      "chai": "^3.5.0",
+      "grunt": "^1.0.1",
+      "grunt-browserify": "^5.0.0",
+      "grunt-contrib-clean": "^1.0.0",
+      "grunt-contrib-jshint": "^1.1.0",
+      "grunt-contrib-uglify": "^2.0.0",
+      "jasmine-core": "^2.5.2",
+      "js-yaml": "^3.7.0",
+      "karma": "^1.4.1",
+      "karma-chai": "^0.1.0",
+      "karma-chrome-launcher": "^2.0.0",
+      "karma-cli": "^1.0.1",
+      "karma-coverage": "^1.1.1",
+      "karma-mocha": "^1.3.0",
+      "karma-phantomjs-launcher": "^1.0.2",
+      "load-grunt-tasks": "^3.5.2",
+      "mocha": "^3.2.0"
+  }
+}

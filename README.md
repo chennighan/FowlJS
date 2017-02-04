@@ -24,6 +24,17 @@ FowlJS is a JavaScript library for filtering profanity.
 ### Editor ###
 We have a .editorConfig file that contains all of our styling for any editor. Whatever editor you choose to use, please download the extension/addon/plugin you need in order for your editor to pick up and implement the file.
 
+* Here are a few links to popular editor plugins for editorconfig: 
+    * [Sublime Text](https://github.com/sindresorhus/editorconfig-sublime)
+    * [Atom](https://github.com/sindresorhus/atom-editorconfig)
+    * [Notepad++](https://github.com/editorconfig/editorconfig-notepad-plus-plus)
+    * [emacs](https://github.com/editorconfig/editorconfig-emacs)
+    * [vim](https://github.com/editorconfig/editorconfig-vim)
+    * [Visual Studio](https://github.com/editorconfig/editorconfig-visualstudio)
+    * [Everything else](https://github.com/editorconfig/)
+    * If you really can't find a plugin or add-on let's talk.  
+    <sub><sup>Note: JetBrains maintains their own editorconfig internal plugin.</sup></sub>
+
 ### Code/Syntax/Logic ###
 * We follow JSDoc specifications for comments so for example, please try and adapt/mimic the following:
 ```javascript

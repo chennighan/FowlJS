@@ -12,7 +12,7 @@ module.exports = function(grunt) {
         },
         browserify: {
             client: {
-                src: ['src/fowl_data.js', 'src/fowl_events.js'],
+                src: ['src/fowl_data.js', 'src/fowl_ui.js'],
                 dest: 'dist/fowl.js'
             }
         }

@@ -19,7 +19,8 @@ module.exports = function(grunt) {
         uglify: {
             my_target: {
                 files: {
-                    'dist/fowl.min.js': ['dist/fowl.js']
+                    'dist/fowl.min.js': ['dist/fowl.js'],
+                    'docs/fowl.min.js': ['dist/fowl.js']
                 }
             }
         }

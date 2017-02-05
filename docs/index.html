@@ -1,0 +1,88 @@
+<html>
+<head>
+    <!-- include bootstrap for easy styling -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.13/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="row text-center">
+        <img id="fowlJSLogo" src="FowlJS.png"><h1><strong>FowlJS</strong></h1>
+    </div>
+    <br />
+    <div class="row">
+        <div class="form-group">
+            <label for="testInput">Enter some text to test FowlJS: </label>
+            <input type='text' id="testInput" class="form-control">
+        </div>
+    </div>
+    <div class="row">
+        <!--<ul id="fowlTextList">-->
+            <!--<li>There are currently no fowl words.</li>-->
+        <!--</ul>-->
+
+        <div class="table-responsive">
+            <table id="fowlTextList" class="table" cellspacing="0" width="100%">
+                <thead>
+                    <tr><th></th></tr>
+                </thead>
+                <tbody>
+                    <tr><td>There are currently no fowl words.</td></tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<!-- include FowlJS -->
+<script src="fowl.min.js" type="text/javascript"></script>
+<!-- include jQuery for easy example -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<!-- include bootstrap for table pagination -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+<!-- jQuery dataTables plugin -->
+<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
+
+<script>
+    $(function() {
+//        $('#testInput').on('change', function() {
+//            var fowlText = fowl.isTextFowl($(this).val());
+//            if(fowlText.length < 1) {
+//                $('#fowlTextList').html('<li>There are currently no fowl words</li>');
+//            } else {
+//                $('#fowlTextList').html('');
+//                for(var i = 0; i < fowlText.length; i++) {
+//                    $('#fowlTextList').append('<li>'+fowlText[i]+'</li>');
+//                }
+//            }
+//        });
+
+        var dataTable = $('#fowlTextList').DataTable({
+            "pageLength": 5,
+            "paging": true,
+            "searching": false,
+            "lengthChange": false,
+            "info": false
+        });
+        $('#testInput').on('change', function() {
+            var fowlText = fowl.isTextFowl($(this).val());
+            if(fowlText.length < 1) {
+                $("#fowlTextList tbody tr").each(function() {
+                   dataTable.row($(this)).remove().draw(false);
+                });
+                dataTable.row.add(['There are currently no fowl words']).draw(false);
+            } else {
+                $("#fowlTextList tbody tr").each(function() {
+                    dataTable.row($(this)).remove().draw(false);
+                });
+                for(var i = 0; i < fowlText.length; i++) {
+                    dataTable.row.add([fowlText[i]]).draw(false);
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

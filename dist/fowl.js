@@ -10,7 +10,7 @@ function Fowl() {
     /*---------------------------------------------------------------
      Internal Fowl Variables
      ----------------------------------------------------------------*/
-    // instantiate the internal profanity object by caching the json profanity object
+    // instantiate the internal profanity array by caching the json profanity object
     var profanity = [
             "2g1c",
             "2 girls 1 cup",
@@ -396,13 +396,20 @@ function Fowl() {
     ----------------------------------------------------------------*/
 
     /**
-     * Method to test if a given string is fowl by comparing it to the fowl.json
+     * Method to test if a given string is fowl by comparing it to the fowl array.
      * profanity object.
-     * @param {string} word, to be determined if fowl.
+     * @param {string} text, to be determined if fowl.
      * @return {boolean}
      */
-    this.isWordFowl = function(word) {
-        return profanity.indexOf(word) > -1;
+    this.isTextFowl = function(text) {
+        // return the fowl text
+        return profanity.filter(function(profanityIndex) {
+            var profanityRegex = new RegExp('\\b' + profanityIndex + '\\b');
+
+            if(profanityRegex.test(text)) {
+                return profanityIndex;
+            }
+        });
     };
 
     return this;

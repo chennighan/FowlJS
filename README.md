@@ -1,6 +1,8 @@
 # ![FowlJS](https://raw.githubusercontent.com/chennighan/FowlJS/master/FowlJS.png) FowlJS #
 FowlJS is a JavaScript library for filtering profanity.
   
+## Examples ##
+* [Example Implemenation](https://chennighan.github.io/FowlJS/)
   
 ## Wiki and Other Resources ##
 * [FowlJS Wiki](https://github.com/chennighan/FowlJS/wiki)

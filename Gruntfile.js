@@ -15,19 +15,30 @@ module.exports = function(grunt) {
                 src: ['src/fowl_data.js', 'src/fowl_ui.js'],
                 dest: 'dist/fowl.js'
             }
+        },
+        uglify: {
+            my_target: {
+                files: {
+                    'dist/fowl.min.js': ['dist/fowl.js']
+                }
+            }
         }
     });
 
     // Load the plugins that provides the jshint task.
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    // Load the clean plugin
+    // Load the clean task
     grunt.loadNpmTasks('grunt-contrib-clean');
+
+    // Load the uglify task
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // Default task(s).
     grunt.registerTask('default', [
         'clean',
         'jshint',
-        'browserify'
+        'browserify',
+        'uglify'
     ]);
 };

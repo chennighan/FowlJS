@@ -6,9 +6,13 @@ FowlJS is a JavaScript library for filtering profanity.
 * [FowlJS Wiki](https://github.com/chennighan/FowlJS/wiki)
 
 ## Usage ##
-* download `/dist/fowl.js` and include in your project, for example:  
+* download `/dist/fowl.js` or `/dist/fowl.min.js` and include in your project, for example:  
 ```
+// non-minified
 <script src="path/to/your/fowl.js" type="text/javascript"></script> 
+
+// minified
+<script src="path/to/your/fowl.min.js" type="text/javascript"></script>
 ```
 
 ## Development Getting Started ##

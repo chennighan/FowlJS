@@ -47,18 +47,6 @@
 
 <script>
     $(function() {
-//        $('#testInput').on('change', function() {
-//            var fowlText = fowl.isTextFowl($(this).val());
-//            if(fowlText.length < 1) {
-//                $('#fowlTextList').html('<li>There are currently no fowl words</li>');
-//            } else {
-//                $('#fowlTextList').html('');
-//                for(var i = 0; i < fowlText.length; i++) {
-//                    $('#fowlTextList').append('<li>'+fowlText[i]+'</li>');
-//                }
-//            }
-//        });
-
         var dataTable = $('#fowlTextList').DataTable({
             "pageLength": 5,
             "paging": true,
@@ -66,7 +54,7 @@
             "lengthChange": false,
             "info": false
         });
-        $('#testInput').on('change', function() {
+        $('#testInput').on('input', function() {
             var fowlText = fowl.isTextFowl($(this).val());
             if(fowlText.length < 1) {
                 $("#fowlTextList tbody tr").each(function() {

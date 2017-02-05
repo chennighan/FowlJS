@@ -14,6 +14,11 @@ FowlJS is a JavaScript library for filtering profanity.
 // minified
 <script src="path/to/your/fowl.min.js" type="text/javascript"></script>
 ```
+* invoke `fowl.isTextFowl(yourText)` for example: 
+```
+var myText = 'my text contains the word ass and FowlJS will tell me all the fowl shit, I mean text.'
+var fowlText = fowl.isTextFowl(myText); // will return ['ass', 'shit']
+```
 
 ## Development Getting Started ##
 * `npm install` - installs the needed module dependencies.
